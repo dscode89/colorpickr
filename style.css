@@ -1,0 +1,132 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-image: url("./assets/black-background.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Merriweather";
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* color section container styles */
+#colour-picker-container {
+  height: calc(30vw + 30vh);
+  width: 70%;
+  background-color: #f9f6ee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* color section container heading styles */
+#main-heading {
+  font-size: calc(2vw + 2vh);
+  border-bottom: 1px solid #e5e4e2;
+  color: #36454f;
+  padding-left: 0.5em;
+}
+/* color section container information styles */
+#colour-information-section {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* color section color information sections */
+.color-info-container {
+  width: 90%;
+  height: 55px;
+  background-color: #f9f6ee;
+  border: 1px solid#e5e4e2;
+  border-radius: 5px;
+  margin-bottom: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: calc(1.1vw + 1.1vh);
+  padding: 0.25em;
+}
+
+/* generate btn styles */
+#generate-new-color-btn {
+  margin-bottom: 1.3em;
+  background-color: #f9f6ee;
+  border-radius: 5px;
+  padding: 0.45em;
+  font-size: calc(1.1vw + 1.1vh);
+}
+
+#generate-new-color-btn:hover {
+  cursor: pointer;
+  background-color: #e5e4e2;
+}
