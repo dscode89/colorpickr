@@ -92,18 +92,23 @@ h6 {
 /* styles for heading container */
 #section-header {
   padding: 0.25em;
+  border-bottom: 1px solid #e5e4e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+/*styles for heading instructions*/
+#heading-instructions {
+  font-size: calc(1vw + 1vh);
 }
 
 /* styles for primary header */
 #main-heading {
   font-size: calc(2vw + 2vh);
-  border-bottom: 1px solid #e5e4e2;
   color: #36454f;
-  padding-left: 0.5em;
-}
-
-#main-heading::after {
-  content: "🖌️";
 }
 
 /* styles for main color information content */
@@ -114,6 +119,28 @@ h6 {
   align-items: center;
   justify-content: center;
   padding: 1em;
+  position: relative;
+}
+
+/*style for clipboard alert*/
+#clipboard-alert {
+  position: absolute;
+  top: 8px;
+  font-size: calc(1vw + 1vh);
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+#clipboard-alert::after {
+  content: "✨";
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 /* styles for color name boxes */
@@ -154,6 +181,16 @@ h6 {
   padding: 0.35em;
 }
 
+.color-info-container:hover {
+  cursor: pointer;
+  background-color: #e5e4e2;
+  border: 1px solid darkgray;
+}
+
+.color-info-container:active {
+  background-color: #bebebc;
+}
+
 /* styles for generate new color button */
 #generate-new-color-btn {
   background-color: #f9f6ee;
@@ -182,6 +219,10 @@ h6 {
 
   #generate-new-color-btn {
     font-size: 30px;
+  }
+
+  #heading-instructions {
+    font-size: 20px;
   }
 
   .color-info-container {

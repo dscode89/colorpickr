@@ -1,4 +1,8 @@
 const generateColorBtn = document.getElementById("generate-new-color-btn");
+const namedColorBox = document.getElementById("css-named-color");
+const hexColorBox = document.getElementById("css-hex-color");
+const rgbColorBox = document.getElementById("css-rgb-color");
+const alertMessage = document.getElementById("clipboard-alert");
 
 // all 140 native css named colors
 const cssNamedColors = [
@@ -162,14 +166,26 @@ async function generateNewColorData() {
 //add event listener for the click of a btn
 generateColorBtn.addEventListener("click", (event) => {
   generateNewColorData().then(({ data }) => {
-    const namedColorBox = document.getElementById("css-named-color");
-    const hexColorBox = document.getElementById("css-hex-color");
-    const rgbColorBox = document.getElementById("css-rgb-color");
     const sqr = document.getElementById("color-sqr");
 
     sqr.style.backgroundColor = data.name;
     namedColorBox.innerText = data.name;
     hexColorBox.innerText = "#" + data.hex;
     rgbColorBox.innerText = `rgb(${data.rgb})`;
+  });
+});
+
+//add event listener for copying and pasting to the clipboard
+[namedColorBox, hexColorBox, rgbColorBox].forEach((box) => {
+  box.addEventListener("click", (event) => {
+    navigator.clipboard.writeText(event.target.innerText);
+
+    alertMessage.classList.remove("hidden");
+    alertMessage.classList.add("visible");
+
+    setTimeout(() => {
+      alertMessage.classList.remove("visible");
+      alertMessage.classList.add("hidden");
+    }, 1500);
   });
 });
