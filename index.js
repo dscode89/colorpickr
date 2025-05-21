@@ -162,15 +162,12 @@ async function generateNewColorData() {
 //add event listener for the click of a btn
 generateColorBtn.addEventListener("click", (event) => {
   generateNewColorData().then(({ data }) => {
-    console.log(data);
     const namedColorBox = document.getElementById("css-named-color");
     const hexColorBox = document.getElementById("css-hex-color");
     const rgbColorBox = document.getElementById("css-rgb-color");
-    const generatorContainer = document.getElementById(
-      "colour-picker-container"
-    );
+    const sqr = document.getElementById("color-sqr");
 
-    generatorContainer.style.backgroundColor = data.name;
+    sqr.style.backgroundColor = data.name;
     namedColorBox.innerText = data.name;
     hexColorBox.innerText = "#" + data.hex;
     rgbColorBox.innerText = `rgb(${data.rgb})`;

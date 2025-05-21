@@ -20,6 +20,7 @@
 body {
   /* 4. Add accessible line-height */
   line-height: 1.5;
+
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   background-image: url("./assets/black-background.jpg");
@@ -30,6 +31,8 @@ body {
   align-items: center;
   height: 100vh;
   font-family: "Merriweather";
+  max-width: 1444px;
+  margin: 0 auto;
 }
 
 /* 6. Improve media defaults */
@@ -83,50 +86,105 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 680px;
 }
 
-/* color section container heading styles */
+/* styles for heading container */
+#section-header {
+  padding: 0.25em;
+}
+
+/* styles for primary header */
 #main-heading {
   font-size: calc(2vw + 2vh);
   border-bottom: 1px solid #e5e4e2;
   color: #36454f;
   padding-left: 0.5em;
 }
-/* color section container information styles */
-#colour-information-section {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+#main-heading::after {
+  content: "🖌️";
 }
 
-/* color section color information sections */
+/* styles for main color information content */
+#colour-information-section {
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+/* styles for color name boxes */
+#color-information-box-wrapper {
+  width: 50%;
+}
+
+/* styles for color box container */
+#color-sqr-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* styles for color square*/
+#color-sqr {
+  height: calc(7vw + 7vh);
+  width: calc(7vw + 7vh);
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: red;
+}
+
+/* styles for color name boxes */
 .color-info-container {
-  width: 90%;
   height: 55px;
   background-color: #f9f6ee;
   border: 1px solid#e5e4e2;
   border-radius: 5px;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: calc(1.1vw + 1.1vh);
-  padding: 0.25em;
+  padding: 0.35em;
 }
 
-/* generate btn styles */
+/* styles for generate new color button */
 #generate-new-color-btn {
-  margin-bottom: 1.3em;
   background-color: #f9f6ee;
   border-radius: 5px;
-  padding: 0.45em;
+  padding: 0.25em;
   font-size: calc(1.1vw + 1.1vh);
+  width: calc(15vw + 15vh);
+  margin: 0 auto 40px auto;
 }
 
 #generate-new-color-btn:hover {
   cursor: pointer;
   background-color: #e5e4e2;
+}
+
+#generate-new-color-btn:active {
+  cursor: pointer;
+  background-color: #bebebc;
+}
+
+/* media queries */
+@media screen and (min-width: 1153px) {
+  #main-heading {
+    font-size: 40px;
+  }
+
+  #generate-new-color-btn {
+    font-size: 30px;
+  }
+
+  .color-info-container {
+    font-size: 30px;
+  }
 }
