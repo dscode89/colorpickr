@@ -151,7 +151,7 @@ async function generateNewColorData() {
   console.log(randomColor);
 
   const reponse = await fetch(
-    `http://www.csscolorsapi.com/api/colors/${randomColor}`
+    `https://www.csscolorsapi.com/api/colors/${randomColor}`
   );
 
   const colorDetails = reponse.json();
